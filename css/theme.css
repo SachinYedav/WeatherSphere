@@ -1,0 +1,122 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Colors */
+  --bg-gradient-start: #c17f45;
+  --bg-gradient-end: #d67a1b;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.3);
+  --muted: rgba(0, 0, 0, 0.6);
+  --accent: #4a90e2;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  /* Spacing / sizing */
+  --g-xxs: 6px;
+  --g-xs: 8px;
+  --g-sm: 12px;
+  --g-md: 20px;
+  --g-lg: 32px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  /* Typography */
+  --font-ui: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  --h1-size: clamp(28px, 5.5vw, 36px);
+  --temp-size: clamp(40px, 8vw, 72px);
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  background: linear-gradient(
+    to bottom,
+    var(--bg-gradient-start),
+    var(--bg-gradient-end)
+  );
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #111;
+  padding: 18px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  overflow-y: auto;
+  transition: background 0.8s ease-in-out, filter 0.8s ease-in-out;
+}
+
+/* SUNNY */
+body.sunny {
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 240, 180, 0.38),
+      transparent 60%
+    ),
+    linear-gradient(to bottom, #ff7b00, #e89d47, #e9b868);
+}
+
+/* CLOUDY */
+body.cloudy {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.22),
+      rgba(255, 255, 255, 0.08)
+    ),
+    linear-gradient(to bottom, #2d3b46, #57626b, #9ea5a8);
+}
+
+/* RAIN */
+body.rain {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.28)
+    ),
+    linear-gradient(to bottom, #2f3fa8, #4b57c5, #6c73d6);
+}
+
+/* SNOW */
+body.snow {
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.2)
+    ),
+    linear-gradient(to bottom, #6f9dbd, #9fd2e6, #b9d0f0);
+  filter: brightness(1.02);
+}
+
+/* THUNDER */
+body.thunder {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.48)
+    ),
+    linear-gradient(to bottom, #000000, #1f1f1f, #353535);
+}
+
+/* Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hidden {
+  display: none !important;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+img[src$=".svg"] {
+  filter: invert(90%) sepia(10%) saturate(300%) hue-rotate(180deg)
+    brightness(105%) contrast(95%);
+}

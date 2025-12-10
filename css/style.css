@@ -1,0 +1,43 @@
+.weather-card {
+  min-width: 128px;
+  padding: 14px;
+}
+.weather-card {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.weather-card.show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.weather-card.card-hover:hover {
+  transform: translateY(-6px);
+}
+
+.card-top,
+.day-card {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: 0.5s ease;
+}
+.card-top.show,
+.day-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stats-card,
+.weather-card,
+.card-tomorrow,
+.day-card {
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.dynamic-text {
+  transition: color 0.3s ease; 
+}
+.card-tomorrow, .day-card, .stats-card {
+  color: inherit; 
+}
+

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>WeatherSphere – Live Weather App</title>
+  <meta
+    name="description"
+    content="Get real-time weather updates, hourly forecasts, and weekly climate insights with WeatherSphere's modern clean UI."
+  />
+  <meta
+    name="keywords"
+    content="weather app, live weather, temperature, humidity, wind speed, forecast, rain, snow, thunder, weather updates"
+  />
+  <meta name="author" content="Sachin Yadav" />
+
+  <!-- Open Graph (for WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="WeatherSphere – Live Weather App" />
+  <meta
+    property="og:description"
+    content="Real-time weather updates with hourly and weekly forecasts in a modern UI."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sachinyedav.github.io/WeatherSphere/" />
+  <meta property="og:image" content="images/application.jpg" />
+  <meta property="og:site_name" content="WeatherSphere" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WeatherSphere – Live Weather App" />
+  <meta
+    name="twitter:description"
+    content="Check real-time weather, hourly updates, and weekly forecasts."
+  />
+  <meta name="twitter:image" content="images/application.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="search-container">
+        <!-- Inline SVG Search Icon -->
+        <span id="searchIcon">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search by City Name..."
+        />
+      </div>
+      <h1 class="nav-logo">Weather</h1>
+    </header>
+
+    <!-- Main Sections -->
+    <main>
+      <!-- LEFT SECTION -->
+      <div class="wrapper left">
+        <section class="weather-main">
+          <article class="weather-wrap">
+            <h1 id="location">Stockland, Sweden</h1>
+            <p class="date">Tue, Jun 30</p>
+          </article>
+
+          <article class="temperature-wrap">
+            <img src="images/cloudy.svg" id="weatherIcon" alt="Weather Icon" />
+            <div class="temp-info">
+              <h2 class="main-temp">19<sup>°C</sup></h2>
+              <p class="weather-type">Rainy</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stats-card">
+            <div>
+              <img src="images/rain.svg" alt="Rainfall" />
+              <p class="label">Rainfall</p>
+            </div>
+            <p class="value" id="rainfall">3 cm</p>
+          </article>
+
+          <article class="stats-card">
+            <div>
+              <img src="images/wind.svg" alt="Wind" />
+              <p class="label">Wind</p>
+            </div>
+            <p class="value" id="windSpeed">19 km/h</p>
+          </article>
+
+          <article class="stats-card">
+            <div>
+              <img src="images/humidity.svg" alt="Humidity" />
+              <p class="label">Humidity</p>
+            </div>
+            <p class="value" id="humidity">64%</p>
+          </article>
+        </section>
+
+        <section class="weather-grid" id="hourlyContainer"></section>
+      </div>
+
+      <!-- RIGHT SECTION -->
+      <div class="wrapper">
+        <section class="card-tomorrow">
+          <article class="card-top">
+            <p class="card-title">Tomorrow</p>
+            <div>
+              <span class="temp">22°</span>
+              <img class="icon-big" src="images/cloudy.svg" alt="Weather" />
+            </div>
+          </article>
+
+          <article class="card-details">
+            <div class="d-item">
+              <img src="images/rain.svg" alt="umbrella" />
+              <p id="tRainfall">15 cm</p>
+            </div>
+
+            <div class="d-item">
+              <img src="images/wind.svg" alt="wind" />
+              <p id="tWind">15 Km/h</p>
+            </div>
+
+            <div class="d-item">
+              <img src="images/humidity.svg" alt="humidity" />
+              <p id="tHumidity">15 %</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="days-grid">
+          <!-- 7 Days Auto-Filled by JS -->
+          <div class="day-card">
+            <span>Monday</span>
+            <div class="card-info">
+              <span>21°</span>
+              <img src="images/cloudy.svg" alt="icon" />
+            </div>
+          </div>
+
+          <div class="day-card">
+            <span>Tuesday</span>
+            <div class="card-info">
+              <span>21°</span>
+              <img src="images/cloudy.svg" alt="icon" />
+            </div>
+          </div>
+
+          <div class="day-card">
+            <span>Wednesday</span>
+            <div class="card-info">
+              <span>21°</span>
+              <img src="images/cloudy.svg" alt="icon" />
+            </div>
+          </div>
+
+          <div class="day-card">
+            <span>Thursday</span>
+            <div class="card-info">
+              <span>21°</span>
+              <img src="images/cloudy.svg" alt="icon" />
+            </div>
+          </div>
+
+          <div class="day-card">
+            <span>Friday</span>
+            <div class="card-info">
+              <span>21°</span>
+              <img src="images/cloudy.svg" alt="icon" />
+            </div>
+          </div>
+
+          <div class="day-card">
+            <span>Saturday</span>
+            <div class="card-info">
+              <span>21°</span>
+              <img src="images/cloudy.svg" alt="icon" />
+            </div>
+          </div>
+
+          <div class="day-card">
+            <span>Sunday</span>
+            <div class="card-info">
+              <span>21°</span>
+              <img src="images/cloudy.svg" alt="icon" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading-overlay">
+      <div class="spinner"></div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

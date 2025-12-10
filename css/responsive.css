@@ -1,0 +1,41 @@
+/* Responsive breakpoints */
+
+/* Phones */
+@media (max-width: 640px) {
+  :root { --g-lg: 18px; }
+  main { flex-direction: column-reverse; gap: 18px; }
+  .wrapper { width: 100%; }
+  .weather-main { flex-direction: column; align-items:flex-start; gap: 12px; }
+  .temperature-wrap { gap: 12px; }
+  #searchInput.active { width: 150px; }
+  .weather-grid { padding: 12px; }
+  .stats-card { padding: 10px; }
+  #weatherIcon { width: 140px; }
+  main {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* Force correct order */
+  .left {
+    order: 1;
+  }
+
+  .wrapper:not(.left) {
+    order: 2;
+  }  .loading-overlay { padding: 12px; }
+}
+
+/* Tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  main { gap: 22px; }
+  .wrapper { flex-basis: 48%; }
+  #weatherIcon { width: 170px; }
+  .weather-grid { gap: 14px; }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .wrapper { flex-basis: 48%; }
+  #searchInput { width: 0; }
+}
