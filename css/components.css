@@ -32,7 +32,7 @@ main {
   letter-spacing: 0.4px;
   font-size: 26px;
   color: transparent;
-  background-image: url(/images/weather.png);
+  background-image: url(../images/weather.png);
   background-clip: text;
   display: block;
 }
@@ -288,3 +288,4 @@ main {
     transform: rotate(360deg);
   }
 }
+
